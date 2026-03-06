@@ -6,8 +6,52 @@
 body{
 margin:0;
 font-family:Arial;
-background:#071c20;
 color:white;
+background:#020617;
+overflow-x:hidden;
+}
+
+/* GALAXY BACKGROUND */
+
+.stars, .stars2, .stars3{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
+}
+
+.stars{
+background-image:
+radial-gradient(2px 2px at 10% 20%, #06b6d4, transparent),
+radial-gradient(2px 2px at 30% 70%, white, transparent),
+radial-gradient(2px 2px at 50% 40%, #06b6d4, transparent),
+radial-gradient(2px 2px at 70% 10%, white, transparent),
+radial-gradient(2px 2px at 90% 60%, #06b6d4, transparent);
+animation:starsMove 120s linear infinite;
+}
+
+.stars2{
+background-image:
+radial-gradient(3px 3px at 20% 50%, white, transparent),
+radial-gradient(3px 3px at 60% 80%, #06b6d4, transparent),
+radial-gradient(3px 3px at 80% 30%, white, transparent);
+animation:starsMove 180s linear infinite;
+opacity:0.7;
+}
+
+.stars3{
+background-image:
+radial-gradient(4px 4px at 40% 20%, #06b6d4, transparent),
+radial-gradient(4px 4px at 75% 70%, white, transparent);
+animation:starsMove 240s linear infinite;
+opacity:0.5;
+}
+
+@keyframes starsMove{
+from{transform:translateY(0);}
+to{transform:translateY(-2000px);}
 }
 
 /* HEADER */
@@ -16,13 +60,17 @@ header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
-background:linear-gradient(90deg,#083344,#06b6d4);
+padding:18px;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
 .logo{
 font-size:20px;
 font-weight:bold;
+color:#06b6d4;
+text-shadow:0 0 10px #06b6d4;
 }
 
 .menu{
@@ -32,34 +80,39 @@ font-size:24px;
 /* HERO */
 
 .hero{
-margin:20px;
-padding:25px;
+margin:25px;
+padding:30px;
 border-radius:20px;
 background:linear-gradient(135deg,#0e7490,#06b6d4);
+box-shadow:0 0 30px rgba(6,182,212,0.5);
 }
 
 .hero h1{
 margin:0;
-font-size:22px;
+font-size:24px;
 }
 
 .hero p{
-margin-top:8px;
 opacity:0.9;
+margin-top:10px;
 }
-
-/* TOMBOL */
 
 .btn{
 display:inline-block;
-margin-top:15px;
+margin-top:20px;
 background:#06b6d4;
-padding:12px 20px;
-border-radius:25px;
+padding:12px 22px;
+border-radius:30px;
 text-decoration:none;
 color:white;
 font-weight:bold;
-animation:glowCyan 2s infinite;
+transition:0.3s;
+box-shadow:0 0 15px #06b6d4;
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 35px #06b6d4;
 }
 
 /* STATS */
@@ -68,7 +121,8 @@ animation:glowCyan 2s infinite;
 margin:20px;
 padding:20px;
 border-radius:20px;
-border:1px solid rgba(255,255,255,0.2);
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
 }
 
 .grid{
@@ -77,11 +131,17 @@ grid-template-columns:1fr 1fr;
 gap:20px;
 }
 
-.green{
+.stat{
+background:rgba(255,255,255,0.05);
+padding:15px;
+border-radius:15px;
+}
+
+.number{
 color:#06b6d4;
 font-size:22px;
 font-weight:bold;
-text-shadow:0 0 5px #06b6d4,0 0 15px #06b6d4;
+text-shadow:0 0 10px #06b6d4;
 }
 
 /* SECTION */
@@ -91,10 +151,11 @@ margin:20px;
 }
 
 .card{
-background:#0f2a30;
+background:rgba(255,255,255,0.05);
 padding:18px;
 border-radius:15px;
 margin-top:10px;
+backdrop-filter:blur(10px);
 }
 
 .more{
@@ -105,58 +166,66 @@ padding:10px 18px;
 border-radius:20px;
 text-decoration:none;
 color:white;
-animation:glowCyan 2s infinite;
+transition:0.3s;
+}
+
+.more:hover{
+box-shadow:0 0 20px #06b6d4;
+}
+
+/* POPUP PEMBELIAN */
+
+.popup{
+position:fixed;
+bottom:20px;
+left:20px;
+background:#0f172a;
+padding:12px 18px;
+border-radius:12px;
+border:1px solid rgba(255,255,255,0.1);
+display:none;
+animation:fadeIn 0.5s;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
 }
 
 /* FOOTER */
 
 footer{
 text-align:center;
-padding:20px;
-opacity:0.7;
+padding:25px;
+opacity:0.6;
 }
 
-/* ANIMASI GLOW CYAN */
-
-@keyframes glowCyan{
-0%{
-box-shadow:0 0 5px #06b6d4,0 0 10px #06b6d4;
-}
-50%{
-box-shadow:0 0 20px #06b6d4,0 0 40px #06b6d4;
-}
-100%{
-box-shadow:0 0 5px #06b6d4,0 0 10px #06b6d4;
-}
-}
-
-</style></head><body><header>
+</style></head><body><div class="stars"></div>
+<div class="stars2"></div>
+<div class="stars3"></div><header>
 <div class="logo">DenisMullet7 Store's</div>
 <div class="menu">☰</div>
 </header><div class="hero">
-<h1>Top Up Bobux & Beli Item Roblox</h1>
-<p>Cara Order : Click "Beli Robux" dan langsung diarahkan ke link no whatsapp penjual.. happy shopping :3</p><a class="btn" href="https://wa.me/qr/Q33UVSRDOQMPH1" target="_blank">
-Beli Robux →
-</a></div><div class="stats"><div class="grid"><div>
+<h1>Top Up Robux Murah & Aman</h1>
+<p>Klik tombol beli untuk langsung order melalui WhatsApp.</p><a class="btn" href="https://wa.me/qr/Q33UVSRDOQMPH1" target="_blank">
+Beli Robux
+</a>
+</div><div class="stats"><div class="grid"><div class="stat">
 Robux Tersedia<br>
-<span class="green">6.411 R$</span>
-</div><div>
+<span class="number">6.401 R$</span>
+</div><div class="stat">
 Harga Robux<br>
-<span class="green">Rp10.000 / 100R$</span>
-</div><div>
+<span class="number">Rp10.000 / 100R$</span>
+</div><div class="stat">
 Robux Terjual<br>
-<span class="green">19.674 R$</span>
-</div><div>
+<span class="number">19.974 R$</span>
+</div><div class="stat">
 Total Order<br>
-<span class="green">502</span>
+<span class="number">502</span>
 </div></div></div><div class="section"><h2>Baru Saja Terjual</h2>
-<p>Item yang baru saja dibeli user lain.</p><div class="card">
-@ameli**** membeli 100 Robux - 2 jam lalu
-</div><div class="card">
-@Myoji**** membeli 50 Robux - 2 jam lalu
-</div><div class="card">
-@ricoo**** membeli 80 Robux - 8 jam lalu
-</div><a class="more" href="https://wa.me/qr/Q33UVSRDOQMPH1" target="_blank">
+<p>Pembelian terbaru dari customer.</p><div class="card">@ameli**** membeli 100 Robux</div>
+<div class="card">@Myoji**** membeli 50 Robux</div>
+<div class="card">@ricoo**** membeli 80 Robux</div><a class="more" href="https://wa.me/qr/Q33UVSRDOQMPH1" target="_blank">
 Tanya Stock Robux ke penjual
 </a></div><div style="margin:20px;">
 <a class="more" href="https://ibb.co.com/9Hsg3F2c" target="_blank">
@@ -164,5 +233,29 @@ Link QRIS
 </a>
 </div><footer>
 © 2026 All Rights Reserved by DenisMullet7 Store's
-</footer></body>
+</footer><div class="popup" id="popup"></div><script>
+
+const buyers=[
+"Rico barusaja membeli 50 Robux",
+"Kevin barusaja membeli 100 Robux",
+"Aldi barusaja membeli 80 Robux",
+"Sinta barusaja membeli 120 Robux",
+"Fajar barusaja membeli 60 Robux"
+];
+
+function showPopup(){
+let popup=document.getElementById("popup");
+let random=buyers[Math.floor(Math.random()*buyers.length)];
+
+popup.innerHTML="🛒 "+random;
+popup.style.display="block";
+
+setTimeout(()=>{
+popup.style.display="none";
+},4000);
+}
+
+setInterval(showPopup,9000);
+
+</script></body>
 </html>
