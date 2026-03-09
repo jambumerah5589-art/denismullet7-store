@@ -1,261 +1,268 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html><html lang="id">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DenisMullet7 Store's</title><style>
 
-body{
+*{
 margin:0;
-font-family:Arial;
-color:white;
+padding:0;
+box-sizing:border-box;
+font-family:sans-serif;
+}
+
+body{
 background:#020617;
+color:white;
 overflow-x:hidden;
 }
 
-/* GALAXY BACKGROUND */
+/* galaxy background */
 
-.stars, .stars2, .stars3{
+body::before{
+content:"";
 position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
+width:200%;
+height:200%;
+background:radial-gradient(circle,#00eaff22 1px,transparent 1px);
+background-size:80px 80px;
+animation:stars 60s linear infinite;
 z-index:-1;
 }
 
-.stars{
-background-image:
-radial-gradient(2px 2px at 10% 20%, #06b6d4, transparent),
-radial-gradient(2px 2px at 30% 70%, white, transparent),
-radial-gradient(2px 2px at 50% 40%, #06b6d4, transparent),
-radial-gradient(2px 2px at 70% 10%, white, transparent),
-radial-gradient(2px 2px at 90% 60%, #06b6d4, transparent);
-animation:starsMove 120s linear infinite;
+@keyframes stars{
+from{transform:translateY(0)}
+to{transform:translateY(-1000px)}
 }
 
-.stars2{
-background-image:
-radial-gradient(3px 3px at 20% 50%, white, transparent),
-radial-gradient(3px 3px at 60% 80%, #06b6d4, transparent),
-radial-gradient(3px 3px at 80% 30%, white, transparent);
-animation:starsMove 180s linear infinite;
-opacity:0.7;
-}
-
-.stars3{
-background-image:
-radial-gradient(4px 4px at 40% 20%, #06b6d4, transparent),
-radial-gradient(4px 4px at 75% 70%, white, transparent);
-animation:starsMove 240s linear infinite;
-opacity:0.5;
-}
-
-@keyframes starsMove{
-from{transform:translateY(0);}
-to{transform:translateY(-2000px);}
-}
-
-/* HEADER */
+/* header */
 
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px;
-background:rgba(0,0,0,0.5);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(255,255,255,0.1);
+padding:20px;
+background:#030f2b;
 }
 
 .logo{
-font-size:20px;
+font-size:22px;
+color:#00eaff;
+text-shadow:0 0 10px #00eaff;
 font-weight:bold;
-color:#06b6d4;
-text-shadow:0 0 10px #06b6d4;
 }
 
 .menu{
-font-size:24px;
+font-size:28px;
 }
 
-/* HERO */
+/* hero */
 
 .hero{
-margin:25px;
-padding:30px;
-border-radius:20px;
-background:linear-gradient(135deg,#0e7490,#06b6d4);
-box-shadow:0 0 30px rgba(6,182,212,0.5);
+width:90%;
+margin:40px auto;
+padding:35px;
+border-radius:25px;
+background:linear-gradient(135deg,#00c6ff,#0072ff);
+text-align:center;
+box-shadow:0 0 30px #00eaff66;
 }
 
 .hero h1{
-margin:0;
-font-size:24px;
+font-size:28px;
+margin-bottom:10px;
 }
 
 .hero p{
 opacity:0.9;
-margin-top:10px;
+margin-bottom:20px;
 }
 
 .btn{
-display:inline-block;
-margin-top:20px;
-background:#06b6d4;
-padding:12px 22px;
+padding:14px 28px;
+border:none;
 border-radius:30px;
-text-decoration:none;
-color:white;
+background:#00eaff;
+color:#000;
 font-weight:bold;
-transition:0.3s;
-box-shadow:0 0 15px #06b6d4;
+cursor:pointer;
+box-shadow:0 0 15px #00eaff;
 }
 
-.btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 35px #06b6d4;
-}
-
-/* STATS */
+/* stats */
 
 .stats{
-margin:20px;
-padding:20px;
-border-radius:20px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
-}
-
-.grid{
+width:90%;
+margin:auto;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:20px;
+gap:15px;
+margin-top:30px;
 }
 
 .stat{
-background:rgba(255,255,255,0.05);
-padding:15px;
-border-radius:15px;
+background:#0b132b;
+padding:25px;
+border-radius:18px;
+text-align:center;
+box-shadow:0 0 15px #00eaff22;
 }
 
-.number{
-color:#06b6d4;
-font-size:22px;
-font-weight:bold;
-text-shadow:0 0 10px #06b6d4;
+.stat span{
+display:block;
+font-size:24px;
+color:#00eaff;
+text-shadow:0 0 10px #00eaff;
+margin-top:8px;
 }
 
-/* SECTION */
+/* recent */
 
-.section{
-margin:20px;
+.recent{
+width:90%;
+margin:50px auto;
 }
 
-.card{
-background:rgba(255,255,255,0.05);
+.recent h2{
+margin-bottom:10px;
+}
+
+.order{
+background:#0b132b;
 padding:18px;
 border-radius:15px;
 margin-top:10px;
-backdrop-filter:blur(10px);
 }
 
-.more{
-display:inline-block;
-margin-top:15px;
-background:#06b6d4;
-padding:10px 18px;
+/* FAQ */
+
+.faq-section{
+width:90%;
+margin:60px auto;
+padding:25px;
 border-radius:20px;
-text-decoration:none;
-color:white;
+background:rgba(0,255,255,0.05);
+box-shadow:0 0 20px rgba(0,255,255,0.3);
+}
+
+.faq-title{
+text-align:center;
+color:#00eaff;
+margin-bottom:25px;
+text-shadow:0 0 10px #00eaff;
+}
+
+.faq-item{
+border-bottom:1px solid rgba(255,255,255,0.15);
+padding:18px 0;
+}
+
+.faq-question{
+display:flex;
+justify-content:space-between;
+cursor:pointer;
+font-weight:bold;
+}
+
+.faq-icon{
+color:#00eaff;
+font-size:22px;
 transition:0.3s;
 }
 
-.more:hover{
-box-shadow:0 0 20px #06b6d4;
+.faq-answer{
+max-height:0;
+overflow:hidden;
+opacity:0;
+transition:0.4s;
 }
 
-/* POPUP PEMBELIAN */
-
-.popup{
-position:fixed;
-bottom:20px;
-left:20px;
-background:#0f172a;
-padding:12px 18px;
-border-radius:12px;
-border:1px solid rgba(255,255,255,0.1);
-display:none;
-animation:fadeIn 0.5s;
+.faq-item.active .faq-answer{
+max-height:200px;
+opacity:1;
+margin-top:10px;
 }
 
-@keyframes fadeIn{
-from{opacity:0; transform:translateY(10px);}
-to{opacity:1; transform:translateY(0);}
+.faq-item.active .faq-icon{
+transform:rotate(45deg);
 }
 
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:25px;
-opacity:0.6;
-}
-
-</style></head><body><div class="stars"></div>
-<div class="stars2"></div>
-<div class="stars3"></div><header>
+</style></head><body><header>
 <div class="logo">DenisMullet7 Store's</div>
 <div class="menu">☰</div>
-</header><div class="hero">
-<h1>Top Up Robux Murah & Aman</h1>
-<p>Klik tombol beli untuk langsung order melalui WhatsApp.</p><a class="btn" href="https://wa.me/qr/Q33UVSRDOQMPH1" target="_blank">
-Beli Robux
-</a>
-</div><div class="stats"><div class="grid"><div class="stat">
-Robux Tersedia<br>
-<span class="number">6.401 R$</span>
+</header><section class="hero"><h1>Top Up Robux Murah & Aman</h1>
+<p>Klik tombol beli untuk langsung order melalui WhatsApp.</p><button class="btn">Beli Robux</button>
+
+</section><div class="stats"><div class="stat">
+Robux Tersedia
+<span>6.401 R$</span>
 </div><div class="stat">
-Harga Robux<br>
-<span class="number">Rp10.000 / 100R$</span>
+Harga Robux
+<span>Rp10.000 / 100R$</span>
 </div><div class="stat">
-Robux Terjual<br>
-<span class="number">19.974 R$</span>
+Robux Terjual
+<span>19.974 R$</span>
 </div><div class="stat">
-Total Order<br>
-<span class="number">502</span>
-</div></div></div><div class="section"><h2>Baru Saja Terjual</h2>
-<p>Pembelian terbaru dari customer.</p><div class="card">@ameli**** membeli 100 Robux</div>
-<div class="card">@Myoji**** membeli 50 Robux</div>
-<div class="card">@ricoo**** membeli 80 Robux</div><a class="more" href="https://wa.me/qr/Q33UVSRDOQMPH1" target="_blank">
-Tanya Stock Robux ke penjual
-</a></div><div style="margin:20px;">
-<a class="more" href="https://ibb.co.com/9Hsg3F2c" target="_blank">
-Link QRIS
-</a>
-</div><footer>
-© 2026 All Rights Reserved by DenisMullet7 Store's
-</footer><div class="popup" id="popup"></div><script>
+Total Order
+<span>502</span>
+</div></div><section class="recent"><h2>Baru Saja Terjual</h2>
+<p>Pembelian terbaru dari customer.</p><div class="order">@ameli**** membeli 100 Robux</div>
+<div class="order">@Myoji**** membeli 50 Robux</div>
+<div class="order">@Farel**** membeli 200 Robux</div></section><section class="faq-section"><h2 class="faq-title">Frequently Asked Questions</h2><div class="faq-item">
+<div class="faq-question">
+EightStore itu apa si ?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+EightStore adalah layanan top up robux cepat, murah dan aman.
+</div>
+</div><div class="faq-item">
+<div class="faq-question">
+Berapa lama robux masuk setelah pembayaran ?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+Biasanya robux dikirim dalam waktu 5-15 menit.
+</div>
+</div><div class="faq-item">
+<div class="faq-question">
+Bagaimana cara mengecek status pesanan?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+Silahkan hubungi admin melalui WhatsApp untuk mengecek pesanan.
+</div>
+</div><div class="faq-item">
+<div class="faq-question">
+Bagaimana cara membeli produk di website ini ?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+Klik tombol beli robux lalu lanjutkan ke WhatsApp admin.
+</div>
+</div><div class="faq-item">
+<div class="faq-question">
+Apa arti status "Sedang Diproses" ?
+<span class="faq-icon">+</span>
+</div>
+<div class="faq-answer">
+Pesanan kamu sedang diproses oleh admin.
+</div>
+</div></section><script>
 
-const buyers=[
-"Rico barusaja membeli 50 Robux",
-"Kevin barusaja membeli 100 Robux",
-"Aldi barusaja membeli 80 Robux",
-"Sinta barusaja membeli 120 Robux",
-"Fajar barusaja membeli 60 Robux"
-];
+const faqItems=document.querySelectorAll(".faq-item");
 
-function showPopup(){
-let popup=document.getElementById("popup");
-let random=buyers[Math.floor(Math.random()*buyers.length)];
+faqItems.forEach(item=>{
 
-popup.innerHTML="🛒 "+random;
-popup.style.display="block";
+let question=item.querySelector(".faq-question");
 
-setTimeout(()=>{
-popup.style.display="none";
-},4000);
-}
+question.addEventListener("click",()=>{
 
-setInterval(showPopup,9000);
+item.classList.toggle("active");
+
+});
+
+});
 
 </script></body>
 </html>
