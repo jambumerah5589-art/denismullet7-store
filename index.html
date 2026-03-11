@@ -17,7 +17,7 @@ color:white;
 overflow-x:hidden;
 }
 
-/* galaxy background */
+/* GALAXY BACKGROUND */
 
 body::before{
 content:"";
@@ -35,7 +35,7 @@ from{transform:translateY(0)}
 to{transform:translateY(-1000px)}
 }
 
-/* header */
+/* HEADER */
 
 header{
 display:flex;
@@ -52,11 +52,50 @@ text-shadow:0 0 10px #00eaff;
 font-weight:bold;
 }
 
-.menu{
-font-size:28px;
+.menu-btn{
+font-size:30px;
+cursor:pointer;
 }
 
-/* hero */
+/* SIDE MENU */
+
+.side-menu{
+position:fixed;
+top:0;
+right:-260px;
+width:260px;
+height:100%;
+background:#020617;
+box-shadow:-5px 0 20px rgba(0,255,255,0.4);
+padding:30px;
+display:flex;
+flex-direction:column;
+gap:20px;
+transition:0.4s;
+z-index:999;
+}
+
+.side-menu.active{
+right:0;
+}
+
+.close-btn{
+font-size:26px;
+cursor:pointer;
+align-self:flex-end;
+}
+
+.menu-link{
+padding:15px;
+border-radius:12px;
+background:#0b132b;
+text-decoration:none;
+color:#00eaff;
+font-weight:bold;
+box-shadow:0 0 10px rgba(0,255,255,0.3);
+}
+
+/* HERO */
 
 .hero{
 width:90%;
@@ -89,7 +128,7 @@ cursor:pointer;
 box-shadow:0 0 15px #00eaff;
 }
 
-/* stats */
+/* STATS */
 
 .stats{
 width:90%;
@@ -116,15 +155,11 @@ text-shadow:0 0 10px #00eaff;
 margin-top:8px;
 }
 
-/* recent orders */
+/* RECENT ORDER */
 
 .recent{
 width:90%;
 margin:50px auto;
-}
-
-.recent h2{
-margin-bottom:10px;
 }
 
 .order{
@@ -187,11 +222,13 @@ margin-top:10px;
 transform:rotate(45deg);
 }
 
-</style></head><body><header>
-<div class="logo">DenisMullet7 Store's</div>
-<div class="menu">☰</div>
-</header><section class="hero"><h1>Top Up Robux Murah & Aman</h1>
-<p>Klik tombol beli untuk langsung order melalui WhatsApp.</p><a href="https://wa.me/qr/Q33UVSRDOQMPH1" target="_blank">
+</style></head><body><header><div class="logo">DenisMullet7 Store's</div><div class="menu-btn" onclick="openMenu()">☰</div></header><!-- SIDE MENU --><div class="side-menu" id="sideMenu"><div class="close-btn" onclick="closeMenu()">✕</div><a href="LINK_QRIS" class="menu-link">💳 QRIS</a>
+
+<a href="https://wa.me/qr/Q33UVSRDOQMPH1" class="menu-link">💬 WhatsApp</a>
+
+<a href="LINK_INSTAGRAM" class="menu-link">📷 Instagram</a>
+
+</div><section class="hero"><h1>Top Up Robux Murah & Aman</h1><p>Klik tombol beli untuk langsung order melalui WhatsApp.</p><a href="https://wa.me/qr/Q33UVSRDOQMPH1" target="_blank">
 <button class="btn">Beli Robux</button>
 </a></section><div class="stats"><div class="stat">
 Robux Tersedia
@@ -205,16 +242,15 @@ Robux Terjual
 </div><div class="stat">
 Total Order
 <span>502</span>
-</div></div><section class="recent"><h2>Baru Saja Terjual</h2>
-<p>Pembelian terbaru dari customer.</p><div class="order">@ameli**** membeli 100 Robux</div>
+</div></div><section class="recent"><h2>Baru Saja Terjual</h2><p>Pembelian terbaru dari customer.</p><div class="order">@ameli**** membeli 100 Robux</div>
 <div class="order">@Myoji**** membeli 50 Robux</div>
 <div class="order">@Farel**** membeli 200 Robux</div></section><section class="faq-section"><h2 class="faq-title">Frequently Asked Questions</h2><div class="faq-item">
 <div class="faq-question">
-DenisMullet7 Store's itu apa si ?
+EightStore itu apa si ?
 <span class="faq-icon">+</span>
 </div>
 <div class="faq-answer">
-DenisMullet7 Store's adalah layanan top up robux cepat, murah dan aman.
+EightStore adalah layanan top up robux cepat dan aman.
 </div>
 </div><div class="faq-item">
 <div class="faq-question">
@@ -222,33 +258,29 @@ Berapa lama robux masuk setelah pembayaran ?
 <span class="faq-icon">+</span>
 </div>
 <div class="faq-answer">
-Biasanya robux dikirim dalam waktu 5-7 Hari.
+Biasanya robux masuk 5-15 menit setelah pembayaran.
 </div>
 </div><div class="faq-item">
 <div class="faq-question">
-Bagaimana cara mengecek status pesanan?
+Bagaimana cara membeli robux ?
 <span class="faq-icon">+</span>
 </div>
 <div class="faq-answer">
-Silahkan hubungi admin melalui WhatsApp untuk mengecek pesanan.
-</div>
-</div><div class="faq-item">
-<div class="faq-question">
-Bagaimana cara membeli produk di website ini ?
-<span class="faq-icon">+</span>
-</div>
-<div class="faq-answer">
-Klik tombol beli robux lalu lanjutkan ke WhatsApp admin.
-</div>
-</div><div class="faq-item">
-<div class="faq-question">
-Apakah Store ini aman ?
-<span class="faq-icon">+</span>
-</div>
-<div class="faq-answer">
-Tentu sangat aman, karena order robux melalui penjual langsung dan Robux berjenis game pass, jadi aman.
+Klik tombol beli robux lalu lanjutkan chat ke WhatsApp admin.
 </div>
 </div></section><script>
+
+/* MENU */
+
+function openMenu(){
+document.getElementById("sideMenu").classList.add("active");
+}
+
+function closeMenu(){
+document.getElementById("sideMenu").classList.remove("active");
+}
+
+/* FAQ */
 
 const faqItems=document.querySelectorAll(".faq-item");
 
